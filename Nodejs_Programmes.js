@@ -1,3 +1,3 @@
-setImmediate(function(){console.log('I AM FROM IMMEDIATE')},5000) //WASTE BY GIVING TIME
+var x=setInterval(function(){console.log('I AM FROM INTERVAL')},1000) //WASTE BY GIVING TIME
 
-setTimeout(function(){console.log('I AM FROM TIMEOUT')},3000)
+clearInterval(x);
