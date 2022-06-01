@@ -1,7 +1,8 @@
-var http=require('http')
-var fs=require('fs');
-
-    fs.unlink('Sample2.txt',function(err){
-       if(err) throw err;
-       console.log('Saved!');
-    })
+var url=require('url')
+var address='http://localhost:8080/default.htm?year=2017&month=february'
+var breaker=url.parse(address,true)
+console.log(breaker.host)
+console.log(breaker.pathname)
+console.log(breaker.search)
+console.log(breaker.query)
+console.log(breaker.query.month)
