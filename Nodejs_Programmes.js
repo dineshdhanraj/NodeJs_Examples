@@ -1,9 +1,6 @@
-var fs = require("fs");  
-// Create a readable stream  
-var readerStream = fs.createReadStream('Sample.txt');  
-// Create a writable stream  
-var writerStream = fs.createWriteStream('Sample2.txt');  
-// Pipe the read and write operations  
-// read input.txt and write data to output.txt  
-readerStream.pipe(writerStream);  
-console.log("Program Ended");   
+var express=require('express');
+var app=express();
+app.get('/',function(req,res){
+    res.send('hello world')
+})
+app.listen(8080);
