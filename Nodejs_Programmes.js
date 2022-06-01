@@ -1,7 +1,7 @@
 var http=require('http')
 var fs=require('fs');
 http.createServer(function(req,res){
-    fs.appendFile('Sample.txt','Hello Dinesh I am Appedning',function(err){
+    fs.writeFile('Sample2.txt','Hello Dinesh I am WritingFile',function(err){
        if(err) throw err;
        console.log('Saved!');
     })
