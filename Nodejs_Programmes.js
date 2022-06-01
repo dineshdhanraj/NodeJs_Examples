@@ -1,6 +1,10 @@
 var http=require('http')
+var fs=require('fs');
 http.createServer(function(req,res){
-    res.writeHead(200,{'Content-Type':'text/plain'});
-    res.write("Hello Dinesh1");
-    res.end();
+    fs.readFile('Sample.txt',function(err,data){
+        res.writeHead(200,{'Content-Type':'text/plain'});
+        res.write(data);
+       return res.end();
+    })
+  
 }).listen(8080);
