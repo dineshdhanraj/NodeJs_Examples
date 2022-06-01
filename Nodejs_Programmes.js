@@ -1,8 +1,10 @@
-var url=require('url')
-var address='http://localhost:8080/default.htm?year=2017&month=february'
-var breaker=url.parse(address,true)
-console.log(breaker.host)
-console.log(breaker.pathname)
-console.log(breaker.search)
-console.log(breaker.query)
-console.log(breaker.query.month)
+var http = require('http');
+var uc = require('upper-case');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write(uc.upperCase("Hello World!"));
+  res.end();
+}).listen(8080);
+
+
+//npm install upper-case   -> Need to install it to use
