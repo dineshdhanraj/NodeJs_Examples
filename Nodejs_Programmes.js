@@ -1,10 +1,19 @@
-var http = require('http');
-var uc = require('upper-case');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write(uc.upperCase("Hello World!"));
-  res.end();
-}).listen(8080);
+var event=require('events')
+var http=require('http')
+var eventEmitter=new event.EventEmitter();
 
 
-//npm install upper-case   -> Need to install it to use
+//create event
+var eventHandler=function(){
+    http.createServer(function(req,res){
+        res.writeHead(200,{'Content-Type':'text/plain'});
+        res.write('Hello Dinesh I am from event emitter');
+        res.end();
+    }).listen(8080);
+}
+
+//on the event
+eventEmitter.on('Key-Dinesh',eventHandler);
+
+//emit the event
+eventEmitter.emit('Key-Dinesh');
