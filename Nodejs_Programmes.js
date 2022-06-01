@@ -1,7 +1,9 @@
 var http=require('http')
-var adder=require('./3rd Program File')
+var fs=require('fs');
 http.createServer(function(req,res){
-        res.writeHead(200,{'Content-Type':'text/num'});
-        res.write(adder.add(5,10).toString());
-       return res.end(); 
+    fs.appendFile('Sample.txt','Hello Dinesh I am Appedning',function(err){
+       if(err) throw err;
+       console.log('Saved!');
+    })
+       
 }).listen(8080);
