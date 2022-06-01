@@ -1,5 +1,8 @@
-var express=require('express');
+var express=require('express')
 var app=express();
-var router=require('./ExpressRoute.js');
-app.use('/routeData',router);
-app.listen(3000);
+
+app.get('/things/*',function(req,res){
+    res.send('Any url u search same output');
+})
+
+app.listen(8080);
